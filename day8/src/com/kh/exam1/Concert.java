@@ -1,36 +1,36 @@
 package com.kh.exam1;
 
-// ½Ç½À°úÁ¦ 8.3: Concert.java
-// ÄÜ¼­Æ® Æ¼ÄÏÀ» ¸ğµ¨ÇÑ´Ù
+// ì‹¤ìŠµê³¼ì œ 8.3: Concert.java
+// ì½˜ì„œíŠ¸ í‹°ì¼“ì„ ëª¨ë¸í•œë‹¤
 
 import java.util.Scanner;
 
 public class Concert {
-  // °¡¼öÀÇ ÀÌ¸§
+  // ê°€ìˆ˜ì˜ ì´ë¦„
   private String singerName;
 
-  // °ø¿¬ Àå¼ÒÀÇ ¼ö¿ë ÀÎ¿ø
+  // ê³µì—° ì¥ì†Œì˜ ìˆ˜ìš© ì¸ì›
   private int capacity;
 
-  // ÆÈ¸° Æ¼ÄÏ ¼ö
+  // íŒ”ë¦° í‹°ì¼“ ìˆ˜
   private int ticketsSold;
 
-  // º¯¼öµé
-  // ÀÎÅÍ³İ Æ¼ÄÏ °¡°İ, ÇöÀå Æ¼ÄÏ °¡°İ, ÃÑ ÆÇ¸Å ±İ¾×°ú ÀÎÅÍ³İ ÆÇ¸Å °¡´É ¿©ºÎ
-  // ÀÎÅÍ³İ Æ¼ÄÏ °¡°İ
+  // ë³€ìˆ˜ë“¤
+  // ì¸í„°ë„· í‹°ì¼“ ê°€ê²©, í˜„ì¥ í‹°ì¼“ ê°€ê²©, ì´ íŒë§¤ ê¸ˆì•¡ê³¼ ì¸í„°ë„· íŒë§¤ ê°€ëŠ¥ ì—¬ë¶€
+  // ì¸í„°ë„· í‹°ì¼“ ê°€ê²©
   private int costOverWeb;
-  // ÇöÀå Æ¼ÄÏ °¡°İ
+  // í˜„ì¥ í‹°ì¼“ ê°€ê²©
   private int costAtVenue;
-  // ÃÑÆÇ¸Å±İ¾×
+  // ì´íŒë§¤ê¸ˆì•¡
   private int totalSalesPrice;
-  // ÀÎÅÍ³İ ÆÇ¸Å °¡´É¿©ºÎ
+  // ì¸í„°ë„· íŒë§¤ ê°€ëŠ¥ì—¬ë¶€
   private boolean webSalesabl = true;
-  // ¿©±â¿¡ ÄÚµå¸¦ »ğÀÔÇÏ¼¼¿ä
+  // ì—¬ê¸°ì— ì½”ë“œë¥¼ ì‚½ì…í•˜ì„¸ìš”
 
 
-  // »ı¼ºÀÚ ¸Ş¼Òµå
-  // °¡¼öÀÇ ÀÌ¸§, °ø¿¬ Àå¼ÒÀÇ ¼ö¿ë ÀÎ¿ø, ÀÎÅÍ³İ Æ¼ÄÏ °¡°İ°ú ÇöÀå Æ¼ÄÏ °¡°İÀ»
-  // °¢°¢ ÁÖ¾îÁø °ªÀ¸·Î ÃÊ±âÈ­ÇÏ¸é¼­ °´Ã¼¸¦ »ı¼ºÇÑ´Ù
+  // ìƒì„±ì ë©”ì†Œë“œ
+  // ê°€ìˆ˜ì˜ ì´ë¦„, ê³µì—° ì¥ì†Œì˜ ìˆ˜ìš© ì¸ì›, ì¸í„°ë„· í‹°ì¼“ ê°€ê²©ê³¼ í˜„ì¥ í‹°ì¼“ ê°€ê²©ì„
+  // ê°ê° ì£¼ì–´ì§„ ê°’ìœ¼ë¡œ ì´ˆê¸°í™”í•˜ë©´ì„œ ê°ì²´ë¥¼ ìƒì„±í•œë‹¤
   public Concert(String name, int max, int costOverWeb, int costAtVenue) {
     this.singerName = name;
     this.capacity = max;
@@ -38,37 +38,37 @@ public class Concert {
     this.costAtVenue = costAtVenue;
   }
 
-  // Æ¼ÄÏÀ» ÆÇ´Ù
+  // í‹°ì¼“ì„ íŒë‹¤
   public void doTicketSale() {
-    // ³²Àº Æ¼ÄÏµéÀÇ ¼ö¸¦ ¾Ë·Á ÁØ´Ù
-    System.out.print("³²Àº Æ¼ÄÏµé ¼ö´Â? (ÃÖ´ë " + getTicketsLeft() + ") ");
+    // ë‚¨ì€ í‹°ì¼“ë“¤ì˜ ìˆ˜ë¥¼ ì•Œë ¤ ì¤€ë‹¤
+    System.out.print("ë‚¨ì€ í‹°ì¼“ë“¤ ìˆ˜ëŠ”? (ìµœëŒ€ " + getTicketsLeft() + ") ");
 
-    // ±¸¸Å ¿äÃ»ÇÑ Æ¼ÄÏ ¼ö¸¦ ÀÔ·Â ¹Ş´Â´Ù
+    // êµ¬ë§¤ ìš”ì²­í•œ í‹°ì¼“ ìˆ˜ë¥¼ ì…ë ¥ ë°›ëŠ”ë‹¤
     Scanner reader = new Scanner(System.in);
     int toSell = reader.nextInt();
 
-    // Æ¼ÄÏÀ» ÆÇ´Ù
+    // í‹°ì¼“ì„ íŒë‹¤
     boolean saleCompleted = sellTickets(toSell);
 
-    // ÆÇ¸Å°¡ ¿Ï·áµÇ¸é Æ¼ÄÏµéÀÇ ÃÑ °¡°İÀ» Ãâ·ÂÇÏ°í
-    // Æ¼ÄÏÀ» ÆÇ¸ÅÇÒ ¼ö ¾øÀ¸¸é ¿À·ù ¸Ş½ÃÁö¸¦ Ãâ·ÂÇÑ´Ù
+    // íŒë§¤ê°€ ì™„ë£Œë˜ë©´ í‹°ì¼“ë“¤ì˜ ì´ ê°€ê²©ì„ ì¶œë ¥í•˜ê³ 
+    // í‹°ì¼“ì„ íŒë§¤í•  ìˆ˜ ì—†ìœ¼ë©´ ì˜¤ë¥˜ ë©”ì‹œì§€ë¥¼ ì¶œë ¥í•œë‹¤
     if(saleCompleted){
-      System.out.println("Æ¼ÄÏµéÀÇ ÃÑ °¡°İ : " + getTotalSales());
+      System.out.println("í‹°ì¼“ë“¤ì˜ ì´ ê°€ê²© : " + getTotalSales());
     }else{
-      System.out.println("ÁË¼ÛÇÕ´Ï´Ù. ÀÜ¿©¼ö·®ÀÌ ºÎÁ·ÇÕ´Ï´Ù.");
-      //System.out.println("ÇöÀç ³²¾ÆÀÖ´Â ÀÜ¿©¼ö·® : " + getTicketsLeft());
+      System.out.println("ì£„ì†¡í•©ë‹ˆë‹¤. ì”ì—¬ìˆ˜ëŸ‰ì´ ë¶€ì¡±í•©ë‹ˆë‹¤.");
+      //System.out.println("í˜„ì¬ ë‚¨ì•„ìˆëŠ” ì”ì—¬ìˆ˜ëŸ‰ : " + getTicketsLeft());
     }
   }
 
-  // ±¸¸Å ¿äÃ»ÇÑ ¼ö¸¸Å­ Æ¼ÄÏÀ» ÆÇ´Ù
-  // Æ¼ÄÏÀ» ÆÇ¸ÅÇÒ ¼ö ÀÖÀ¸¸é ÆÇ¸Å ±â·ÏÀ» °»½ÅÇÏ°í true¸¦ ¹İÈ¯ÇÑ´Ù
-  // Æ¼ÄÏÀ» ÆÇ¸ÅÇÒ ¼ö ¾øÀ¸¸é false¸¦ ¹İÈ¯ÇÑ´Ù
+  // êµ¬ë§¤ ìš”ì²­í•œ ìˆ˜ë§Œí¼ í‹°ì¼“ì„ íŒë‹¤
+  // í‹°ì¼“ì„ íŒë§¤í•  ìˆ˜ ìˆìœ¼ë©´ íŒë§¤ ê¸°ë¡ì„ ê°±ì‹ í•˜ê³  trueë¥¼ ë°˜í™˜í•œë‹¤
+  // í‹°ì¼“ì„ íŒë§¤í•  ìˆ˜ ì—†ìœ¼ë©´ falseë¥¼ ë°˜í™˜í•œë‹¤
   public boolean sellTickets(int number) {
     boolean flag = false;
-    // Æ¼ÄÏ ÀÜ¿©¼ö·® >= Æ¼ÄÏ ±¸¸Å¼ö·®
+    // í‹°ì¼“ ì”ì—¬ìˆ˜ëŸ‰ >= í‹°ì¼“ êµ¬ë§¤ìˆ˜ëŸ‰
     if(getTicketsLeft() >= number){
-      ticketsSold += number;                    //Æ¼ÄÏÆÇ¸Å¼ö·® ´©Àû
-      totalSalesPrice += getSaleCost(number);   //ÆÇ¸Å±İ¾× ´©Àû
+      ticketsSold += number;                    //í‹°ì¼“íŒë§¤ìˆ˜ëŸ‰ ëˆ„ì 
+      totalSalesPrice += getSaleCost(number);   //íŒë§¤ê¸ˆì•¡ ëˆ„ì 
       flag = true;
     }else{
 
@@ -77,10 +77,10 @@ public class Concert {
     return flag;
   }
 
-  // ±¸¸Å ¿äÃ»ÇÑ Æ¼ÄÏµéÀÇ °¡°İÀ» °è»êÇÑ ÈÄ ¹İÈ¯ÇÑ´Ù
+  // êµ¬ë§¤ ìš”ì²­í•œ í‹°ì¼“ë“¤ì˜ ê°€ê²©ì„ ê³„ì‚°í•œ í›„ ë°˜í™˜í•œë‹¤
   public int getSaleCost(int number) {
     int price = 0;
-    //ÀÎÅÍ³İ ´Ü°¡ or ÇöÀå´Ü°¡
+    //ì¸í„°ë„· ë‹¨ê°€ or í˜„ì¥ë‹¨ê°€
     if(webSalesOnly()){
       price = this.costOverWeb * number;
     }else{
@@ -89,39 +89,39 @@ public class Concert {
     return price;
   }
 
-  // ÀÎÅÍ³İ ÆÇ¸Å¸¦ Á¾·áÇÑ´Ù
+  // ì¸í„°ë„· íŒë§¤ë¥¼ ì¢…ë£Œí•œë‹¤
   public void webSalesOver() {
     this.webSalesabl = false;
   }
 
-  // ÆÈ¸° Æ¼ÄÏµéÀÇ ¼ö¸¦ ¾Ë·Á ÁØ´Ù
+  // íŒ”ë¦° í‹°ì¼“ë“¤ì˜ ìˆ˜ë¥¼ ì•Œë ¤ ì¤€ë‹¤
   public int getTicketsSold() {
     return ticketsSold;
   }
 
-  // ³²Àº Æ¼ÄÏµéÀÇ ¼ö¸¦ ¾Ë·Á ÁØ´Ù
+  // ë‚¨ì€ í‹°ì¼“ë“¤ì˜ ìˆ˜ë¥¼ ì•Œë ¤ ì¤€ë‹¤
   public int getTicketsLeft() {
 //    int result = this.capacity - this.ticketsSold;
 //    return result;
     return this.capacity - this.ticketsSold;
   }
 
-  // ÃÑ ÆÇ¸Å ±İ¾×À» ¾Ë·Á ÁØ´Ù
+  // ì´ íŒë§¤ ê¸ˆì•¡ì„ ì•Œë ¤ ì¤€ë‹¤
   public int getTotalSales() {
     return this.totalSalesPrice;
   }
 
-  // ÀÎÅÍ³İ ÆÇ¸Å °¡´É ¿©ºÎ¸¦ ¾Ë·Á ÁØ´Ù
+  // ì¸í„°ë„· íŒë§¤ ê°€ëŠ¥ ì—¬ë¶€ë¥¼ ì•Œë ¤ ì¤€ë‹¤
   public boolean webSalesOnly() {
     return this.webSalesabl;
   }
 
-  // ÆÈ¸° Æ¼ÄÏ ¼ö¿Í ÃÑ ÆÇ¸Å ±İ¾×À» ¹İÈ¯ÇÑ´Ù
+  // íŒ”ë¦° í‹°ì¼“ ìˆ˜ì™€ ì´ íŒë§¤ ê¸ˆì•¡ì„ ë°˜í™˜í•œë‹¤
   public String getSalesReport() {
     String str = "";
 
-    str += "ÆÈ¸° Æ¼ÄÏ ¼ö : " + this.getTicketsSold() + "\n";
-    str += "ÃÑ ÆÇ¸Å ±İ¾× : " + this.getTotalSales() + "\n";
+    str += "íŒ”ë¦° í‹°ì¼“ ìˆ˜ : " + this.getTicketsSold() + "\n";
+    str += "ì´ íŒë§¤ ê¸ˆì•¡ : " + this.getTotalSales() + "\n";
 
     return str;
   }
