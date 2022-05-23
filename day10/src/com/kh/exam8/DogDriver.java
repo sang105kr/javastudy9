@@ -5,16 +5,14 @@ package com.kh.exam8;
 
 import java.util.*;
 
-public class DogDriver
-{
-  public static void main(String[] args)
-  {
+public class DogDriver {
+  public static void main(String[] args) {
     Scanner scan = new Scanner(System.in);
     String shotAnswer;  // 예방주사 접종여부 입력값
-    String dogName;		// 개 이름
-    int dogAge;			// 개 나이
-    String dogBreed;	// 개 품종
-    boolean dogShot;	// 예방주사 접종여부
+    String dogName;    // 개 이름
+    int dogAge;      // 개 나이
+    String dogBreed;  // 개 품종
+    boolean dogShot;  // 예방주사 접종여부
 
     // 개의 이름, 나이와 품종은 각각 기본 값으로 초기화하고
     // 예방주사 접종여부는 false로 초기화하면서 Dog 객체를 생성한다
