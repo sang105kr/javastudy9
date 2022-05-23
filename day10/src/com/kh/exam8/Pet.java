@@ -38,6 +38,7 @@ public class Pet {
   }
 
   // 애완동물의 이름과 나이를 알려 준다
+  @Override
   public String toString() {
     return ("이름: " + name + "\n나이: " + age + "\n");
   }

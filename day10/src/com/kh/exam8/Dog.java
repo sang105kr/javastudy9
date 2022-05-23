@@ -24,6 +24,7 @@ public class Dog extends Pet {
   }
 
   // 개의 모든 데이터를 알려 준다
+  @Override
   public String toString() {
     String str = super.toString();
     str += "품종: " + breed + "\n";

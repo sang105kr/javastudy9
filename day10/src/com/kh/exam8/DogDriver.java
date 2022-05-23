@@ -59,8 +59,11 @@ public class DogDriver {
 
     // 개의 예방주사 접종여부 입력 값에 따라
     // 예방주사 접종여부를 적절하게 정한다
-    if (shotAnswer.equals("예")) d2.setBoosterShot(true);
-    else d2.setBoosterShot(false);
+    if (shotAnswer.equals("예")) {
+      d2.setBoosterShot(true);
+    }else {
+      d2.setBoosterShot(false);
+    }
 
     // 첫 번째 Dog 객체의 모든 데이터를 출력한다
     System.out.println();
@@ -75,11 +78,13 @@ public class DogDriver {
     System.out.println("다음 개들은 두 살이 넘었으나 예방주사를 맞지 않았다: ");
     System.out.println();
 
-    if (d1.getAge() > 2 && !d1.getBoosterShot())
+    if (d1.getAge() > 2 && !d1.getBoosterShot()){
       System.out.println("이름: " + d1.getName() + " 나이: " + d1.getAge());
+    }
 
-    if (d2.getAge() > 2 && !d2.getBoosterShot())
+    if (d2.getAge() > 2 && !d2.getBoosterShot()) {
       System.out.println("이름: " + d2.getName() + " 나이: " + d2.getAge());
+    }
   }
 }
 
