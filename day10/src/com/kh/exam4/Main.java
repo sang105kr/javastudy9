@@ -38,7 +38,5 @@ public class Main {
     Student s3 = (Student)p3;
     s3.study();
 
-
-
   }
 }
