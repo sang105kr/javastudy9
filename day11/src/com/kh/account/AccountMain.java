@@ -37,6 +37,11 @@ public class AccountMain {
             System.out.println("계좌 개설 한도가 모두 찼습니다.");
             continue;
           }
+          //동명이인 체크
+          if(dupChkAccountName(accounts, accountName)){
+            System.out.println("동명이인이 존재합니다.");
+            continue;
+          }
           accounts[idx] = new Account(accountName);
           System.out.println(accountName + "님의 계좌가 생성되었습니다!");
           System.out.println(accounts[idx]);
@@ -154,5 +159,20 @@ public class AccountMain {
       }
     }
     return findedIndex;
+  }
+
+  //동명이인 체크
+  private static boolean dupChkAccountName(Account[] accounts, String accountName){
+    boolean dupChk = false;
+    for (int i = 0; i < accounts.length; i++) {
+      if(accounts[i] == null) {
+        continue;
+      }
+      if(accounts[i].getAccountName().equals(accountName)){
+        dupChk = true;
+        break;
+      }
+    }
+    return dupChk;
   }
 }

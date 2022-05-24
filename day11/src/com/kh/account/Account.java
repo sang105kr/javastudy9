@@ -71,4 +71,9 @@ public class Account {
   public int getBalance() {
     return balance;
   }
+
+  //예금주 이름반환
+  public String getAccountName() {
+    return accountName;
+  }
 }
