@@ -43,5 +43,13 @@ public class TreeMapExam1 {
     System.out.println(subMap);
     NavigableMap<Integer, String> subMap2 = scores.subMap(80, false, 90, false);
     System.out.println(subMap2);
+
+    System.out.println(scores.headMap(80,true));
+    System.out.println(scores.tailMap(80,false));
+
+    //맵을 내림차순하여 정렬된 객체반환
+    System.out.println(scores.descendingMap());
+    //맵의 키를 내림차순하여 정렬된 객체반환
+    System.out.println(scores.descendingKeySet());
   }
 }

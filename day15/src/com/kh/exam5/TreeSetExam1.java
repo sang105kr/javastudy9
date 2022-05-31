@@ -44,5 +44,14 @@ public class TreeSetExam1 {
     System.out.println(integers1);
     NavigableSet<Integer> integers2 = scores.subSet(80, false, 95, true);
     System.out.println(integers2);
+
+    //오름차순하여 상위 그룹, 하위그룹 가져오기
+    System.out.println(scores.headSet(80,true));
+    System.out.println(scores.tailSet(80,false));
+
+    //내림차순하여 상위 그룹, 하위그룹 가져오기
+    NavigableSet<Integer> scoresByDescending = scores.descendingSet();
+    System.out.println(scoresByDescending.headSet(80,true));
+    System.out.println(scoresByDescending.tailSet(80,false));
   }
 }
