@@ -8,7 +8,7 @@ import java.util.*;
 public class Dictionary {
   private TreeMap<String, String> dic = new TreeMap<>();
   private final int WORD_CPAPCITY = 5; // 단어 최대 저장 갯수
-  
+
   /**
    * 저장
    *
@@ -24,7 +24,7 @@ public class Dictionary {
     if (dic.containsKey(word)) {
       throw new DictionaryException("이미 등록 되었습니다!");
     }
-    dic.put(word, meaning);
+    dic.put(word.toLowerCase(), meaning);
   }
 
   /**
@@ -34,6 +34,8 @@ public class Dictionary {
    * @return 검색결과
    */
   public Map<String, String> findByWord(String word) {
+    word = word.toLowerCase();
+
     Map<String, String> map = new HashMap<>();
 
     String meaing = dic.get(word);
@@ -56,6 +58,7 @@ public class Dictionary {
    * @param meaning 의미
    */
   public void update(String word, String meaning) {
+    word = word.toLowerCase();
 
     if (dic.replace(word, meaning) == null) {
       throw new DictionaryException("단어를 검색할 수 없습니다.");
@@ -69,6 +72,8 @@ public class Dictionary {
    * @param word
    */
   public void del(String word) {
+    word = word.toLowerCase();
+
     if (dic.remove(word) == null) {
       throw new DictionaryException("단어를 검색할 수 없습니다.");
     }
@@ -103,6 +108,7 @@ public class Dictionary {
    * @return 초성으로 시작하는 단어 반환
    */
   public List<String> index(String letter) {
+    letter = letter.toLowerCase();
     checkEmpty();
 
     //다음 문자 계산하기
